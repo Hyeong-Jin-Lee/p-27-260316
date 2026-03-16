@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BroJIn Site",
-  description: "REST API 사이트",
+  title: "MySite",
+  description: "My Rest API Site",
 };
 
 export default function RootLayout({
@@ -26,18 +26,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} 
+        antialiased min-h-screen flex flex-col 
+        `}
       >
         <header>
           <nav className="flex gap-4">
-            <Link href ="/">메인</Link>
-            <Link href ="/list">목록</Link>
+            <Link href="/">메인</Link>
+            <Link href="/list">목록</Link>
           </nav>
         </header>
-        {children}
-        <footer>
-          푸터
-        </footer>
+        <main className="flex-grow">{children}</main>
+        <footer>푸터</footer>
       </body>
     </html>
   );
